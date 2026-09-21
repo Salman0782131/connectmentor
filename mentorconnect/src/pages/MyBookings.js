@@ -282,7 +282,7 @@ function MyBookings() {
                       ) : (
                         /* 📝 FEEDBACK FORM — inline inside card */
                         <div>
-                          <p className="text-gray-700 font-semibold text-sm mb-3">
+                          <p className="text-blue-700 font-bold text-sm mb-3 tracking-wide">
                             💬 How was your session?
                           </p>
 
