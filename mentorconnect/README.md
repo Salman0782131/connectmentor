@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# 💻 MentorConnect Frontend Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-18.3.1-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.10-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Material UI](https://img.shields.io/badge/MUI-6.0.2-007FFF?style=flat-square&logo=mui&logoColor=white)](https://mui.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-Client-3ECF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com/)
+[![WebRTC](https://img.shields.io/badge/WebRTC-SimplePeer-FF4500?style=flat-square&logo=webrtc&logoColor=white)](https://webrtc.org/)
 
-## Available Scripts
+The frontend user interface for **MentorConnect**, built with React 18, Tailwind CSS, Material UI, Supabase client, and Simple-Peer.
 
-In the project directory, you can run:
+---
+
+## 🚀 Available Scripts
+
+In this directory, you can run:
 
 ### `npm start`
-
-Runs the app in the development mode.\
+Runs the application in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm run build`
+Builds the app for production to the `build` folder.\
+Optimizes the build for the best performance and minifies assets.
 
 ### `npm test`
+Launches the test runner in interactive watch mode.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Key Routes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `/`: Landing page with hero banner & feature highlights
+- `/login`, `/login/mentee`, `/login/mentor`: Role-specific authentication
+- `/mentee-dashboard`: Mentee overview with coding statistics & attendance
+- `/explore-mentors`: Mentor directory & 1-on-1 session booking
+- `/ai-chatbot`: Interactive 24/7 AI mentor chat
+- `/coding-tracker`: LeetCode problem-solving milestone tracker
+- `/my-bookings`: Meeting management, attendance & star ratings
+- `/video-call`: P2P WebRTC video conferencing
+- `/roadmap`: Tailored career roadmap planner
+- `/resources`: Curated learning materials & articles
+- `/mentor-dashboard`: Mentor control center
+- `/manage-mentees`: Mentee roster & individual progress inspection
+- `/performance-dashboard`: Comprehensive mentee analytics & attendance tracking
+- `/resources-materials`: Mentor material publishing studio
+- `/review-requests`: Booking requests approval/rejection
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For root project setup, architecture diagrams, backend configuration, and database schemas, refer to the [Root README](../README.md).
