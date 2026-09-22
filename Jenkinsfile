@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     environment {
+        // Add Node.js and Homebrew binary paths so Jenkins executor can find node & npm on macOS
+        PATH = "/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:${env.PATH}"
         CI = 'true'
-        NODE_ENV = 'production'
     }
 
     options {
@@ -17,10 +18,14 @@ pipeline {
                 echo '========================================='
                 echo '🚀 STEP 1: Verifying Build Environment'
                 echo '========================================='
-                sh '''
+                sh '''#!/bin/bash
+                    export PATH="/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
                     echo "Current User: $(whoami)"
                     echo "Working Directory: $(pwd)"
+                    echo "PATH: $PATH"
+                    echo "Node Location: $(which node || echo 'Node not in PATH')"
                     echo "Node Version: $(node -v || echo 'Node not found')"
+                    echo "NPM Location: $(which npm || echo 'NPM not in PATH')"
                     echo "NPM Version: $(npm -v || echo 'NPM not found')"
                     echo "Git Commit: $(git rev-parse --short HEAD || echo 'N/A')"
                 '''
@@ -33,7 +38,10 @@ pipeline {
                 echo '📦 STEP 2: Installing Backend Dependencies'
                 echo '========================================='
                 dir('backend') {
-                    sh 'npm install --prefer-offline --no-audit || npm install'
+                    sh '''#!/bin/bash
+                        export PATH="/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+                        npm install --prefer-offline --no-audit || npm install
+                    '''
                 }
             }
         }
@@ -44,7 +52,10 @@ pipeline {
                 echo '📦 STEP 3: Installing Frontend Dependencies'
                 echo '========================================='
                 dir('mentorconnect') {
-                    sh 'npm install --legacy-peer-deps --no-audit || npm install'
+                    sh '''#!/bin/bash
+                        export PATH="/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+                        npm install --legacy-peer-deps --no-audit || npm install
+                    '''
                 }
             }
         }
@@ -55,7 +66,10 @@ pipeline {
                 echo '🧪 STEP 4: Running Automated Tests'
                 echo '========================================='
                 dir('mentorconnect') {
-                    sh 'CI=true npm test -- --watchAll=false || echo "Tests passed with exit flag"'
+                    sh '''#!/bin/bash
+                        export PATH="/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+                        CI=true npm test -- --watchAll=false --forceExit || echo "Tests completed"
+                    '''
                 }
             }
         }
@@ -66,7 +80,10 @@ pipeline {
                 echo '🏗️ STEP 5: Building React Production Bundle'
                 echo '========================================='
                 dir('mentorconnect') {
-                    sh 'npm run build'
+                    sh '''#!/bin/bash
+                        export PATH="/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+                        npm run build
+                    '''
                 }
             }
         }
